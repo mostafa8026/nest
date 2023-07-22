@@ -218,9 +218,12 @@ export class ServerKafka extends Server implements CustomTransportStrategy {
     if (!outgoingResponse.err) {
       return;
     }
-    outgoingMessage.headers[KafkaHeaders.NEST_ERR] = Buffer.from(
-      outgoingResponse.err,
-    );
+    const stringifiedError =
+      typeof outgoingResponse.err === 'object'
+        ? JSON.stringify(outgoingResponse.err)
+        : outgoingResponse.err;
+    outgoingMessage.headers[KafkaHeaders.NEST_ERR] =
+      Buffer.from(stringifiedError);
   }
 
   public assignCorrelationIdHeader(

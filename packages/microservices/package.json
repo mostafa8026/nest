@@ -1,6 +1,6 @@
 {
-  "name": "@nestjs/microservices",
-  "version": "7.6.18",
+  "name": "@dcdl/microservices",
+  "version": "7.6.19",
   "description": "Nest - modern, fast, powerful node.js web framework (@microservices)",
   "author": "Kamil Mysliwiec",
   "license": "MIT",
@@ -14,7 +14,8 @@
     "url": "https://github.com/nestjs/nest"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://artifactory.chapyar.com/artifactory/api/npm/npm/"
   },
   "dependencies": {
     "iterare": "1.2.1",
